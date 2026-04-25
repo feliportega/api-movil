@@ -14,8 +14,12 @@ import com.orochi.autenticacionapi.model.LoginResponse;
 import com.orochi.autenticacionapi.model.RetrofitClient;
 
 import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Login extends AppCompatActivity {
+
+    RetrofitClient retrofitClient;
 
     EditText edtCorreo, edtPassword;
     Button btnIngresar;
@@ -29,12 +33,44 @@ public class Login extends AppCompatActivity {
         edtPassword = findViewById(R.id.edtPassword);
         btnIngresar = findViewById(R.id.btnIngresar);
 
+        btnIngresar.setOnClickListener(view -> {
+            String email = edtCorreo.getText().toString();
+            String password = edtPassword.getText().toString();
 
-        ApiService api = RetrofitClient.getClient().create(ApiService.class);
+            if(email.isEmpty() || password.isEmpty()){
+                edtCorreo.setError("Campo requerido");
+                edtPassword.setError("Campo requerido");
+                return;
+            }
 
-        LoginRequest request = new LoginRequest("andres@admin.com", "123456");
+            LoginRequest request = new LoginRequest(email,password);
 
-        Call<LoginResponse> call = api.login(request);
+            ApiService api = RetrofitClient.getClient().create(ApiService.class);
+
+            Call<LoginResponse> call = api.login(request);
+
+            call.enqueue(new Callback<LoginResponse>() {
+                @Override
+                public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+
+                    if (response.isSuccessful() && response.body() != null) {
+                        String token = response.body().getToken();
+                        guardarToken(token);
+                    }
+
+                }
+
+                private void guardarToken(String token){
+                    System.out.println("token: "+token);
+                }
+
+                @Override
+                public void onFailure(Call<LoginResponse> call, Throwable t) {
+                    System.out.println("Error; "+t.getMessage());
+                }
+            });
+        });
+
 
     }
 }
