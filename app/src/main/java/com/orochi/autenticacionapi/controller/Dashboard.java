@@ -27,7 +27,7 @@ public class Dashboard extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         if (extras !=null) {
-            String nombre = extras.get
+            String nombre = extras.getString("USER_NAME");
         }
 
     }
