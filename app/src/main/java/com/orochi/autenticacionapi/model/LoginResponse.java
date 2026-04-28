@@ -3,10 +3,10 @@ package com.orochi.autenticacionapi.model;
 import java.util.ArrayList;
 
 public class LoginResponse {
-    String token;
+    String access;
 
     public String getToken(){
-        return token;
+        return access;
     }
 
     private ArrayList<LoginRequest>results;
@@ -25,7 +25,7 @@ public class LoginResponse {
     @Override
     public String toString() {
         return "LoginResponse{" +
-                "token='" + token + '\'' +
+                "token='" + access + '\'' +
                 ", results=" + results +
                 '}';
     }

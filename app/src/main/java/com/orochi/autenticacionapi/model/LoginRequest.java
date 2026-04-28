@@ -2,17 +2,17 @@ package com.orochi.autenticacionapi.model;
 
 public class LoginRequest {
      String correo;
-     String nombre;
+     String password;
 
-    public LoginRequest(String correo, String nombre) {
+    public LoginRequest(String correo, String password) {
         this.correo = correo;
-        this.nombre = nombre;
+        this.password = password;
     }
 
     public  String getCorreo(){
         return correo;
     }
     public String getNombre(){
-        return nombre;
+        return password;
     }
 }

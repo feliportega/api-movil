@@ -8,4 +8,8 @@ public interface ApiService {
 
     @POST("users/login")
     Call<LoginResponse> login(@Body LoginRequest request);
+
+    @POST("users/register")
+    Call<LoginResponse> register(@Body RegisterRequest request);
+
 }

@@ -1,8 +1,11 @@
 package com.orochi.autenticacionapi.controller;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,15 +22,21 @@ import retrofit2.Response;
 
 public class Login extends AppCompatActivity {
 
-    RetrofitClient retrofitClient;
 
     EditText edtCorreo, edtPassword;
     Button btnIngresar;
+    TextView tvregister;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
+
+        tvregister = findViewById(R.id.tvRegister);
+        tvregister.setOnClickListener(view -> {
+            Intent irReg = new Intent(Login.this, Register.class);
+            startActivity(irReg);
+        });
 
         edtCorreo = findViewById(R.id.edtCorreo);
         edtPassword = findViewById(R.id.edtPassword);
@@ -54,14 +63,19 @@ public class Login extends AppCompatActivity {
                 public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
 
                     if (response.isSuccessful() && response.body() != null) {
-                        String token = response.body().getToken();
-                        guardarToken(token);
+                        String access = response.body().getToken();
+                        guardarToken(access);
+
+                        Toast.makeText(Login.this, "¡Bienbenido!", Toast.LENGTH_SHORT).show();
+
+                    } else {
+                        Toast.makeText(Login.this, "Correo o contraseña incorecto", Toast.LENGTH_SHORT).show();
                     }
 
                 }
 
-                private void guardarToken(String token){
-                    System.out.println("token: "+token);
+                private void guardarToken(String access){
+                    System.out.println("token: "+access);
                 }
 
                 @Override
