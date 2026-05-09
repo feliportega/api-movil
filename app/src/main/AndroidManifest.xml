@@ -14,6 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AutenticacionApi">
         <activity
+            android:name=".controller.RestablecerContrasena"
+            android:exported="false" />
+        <activity
+            android:name=".controller.RecuperarCuenta"
+            android:exported="false" />
+        <activity
             android:name=".controller.Dashboard"
             android:exported="false" />
         <activity

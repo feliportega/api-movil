@@ -25,7 +25,7 @@ public class Login extends AppCompatActivity {
 
     EditText edtCorreo, edtPassword;
     Button btnIngresar;
-    TextView tvregister;
+    TextView tvregister, tvrecuperarcuenta;
     TokenManager tokenManager;
 
     @Override
@@ -35,6 +35,12 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         tokenManager = new TokenManager(this);
+
+        tvrecuperarcuenta = findViewById(R.id.tvRecuperarcuenta);
+        tvrecuperarcuenta.setOnClickListener(view -> {
+            Intent irRecuperar = new Intent(Login.this, RecuperarCuenta.class);
+            startActivity(irRecuperar);
+        });
 
         tvregister = findViewById(R.id.tvRegister);
         tvregister.setOnClickListener(view -> {
