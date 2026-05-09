@@ -1,19 +1,21 @@
 package com.orochi.autenticacionapi.controller;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.orochi.autenticacionapi.R;
+import com.orochi.autenticacionapi.model.TokenManager;
 
 public class Dashboard extends AppCompatActivity {
 
     TextView txtnombre, txtemail;
+    Button btnLogout;
+    TokenManager tokenManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +25,25 @@ public class Dashboard extends AppCompatActivity {
 
         txtnombre = findViewById(R.id.txtNombre);
         txtemail = findViewById(R.id.txtEmail);
+        btnLogout = findViewById(R.id.btnLogout);
+        
+        tokenManager = new TokenManager(this);
 
-
+        // Recibimos los datos del Intent
         Bundle extras = getIntent().getExtras();
-        if (extras !=null) {
-            String nombre = extras.getString("USER_NAME");
+        if (extras != null) {
+            String email = extras.getString("USER_EMAIL");
+            txtemail.setText(email);
+            // Si el nombre no viene en el intent, podrías poner el email o un texto genérico
+            txtnombre.setText("Usuario Activo");
         }
 
+        // Lógica para cerrar sesión
+        btnLogout.setOnClickListener(v -> {
+            tokenManager.clearToken();
+            Intent intent = new Intent(Dashboard.this, Login.class);
+            startActivity(intent);
+            finish();
+        });
     }
 }

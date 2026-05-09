@@ -1,8 +1,15 @@
 package com.orochi.autenticacionapi.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class RegisterRequest {
+    @SerializedName("nombre")
     private String nombre;
+    
+    @SerializedName("correo")
     private String correo;
+    
+    @SerializedName("password")
     private String password;
 
     public RegisterRequest(String nombre, String correo, String password) {

@@ -37,7 +37,6 @@ public class Register extends AppCompatActivity {
         edtPassword = findViewById(R.id.edtPassword);
         btnRegistrar = findViewById(R.id.btnRegistrar);
 
-
         btnRegistrar.setOnClickListener(view -> {
             String nombre = edtNombre.getText().toString();
             String correo = edtCorreo.getText().toString();
