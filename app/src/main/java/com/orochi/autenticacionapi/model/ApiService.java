@@ -12,4 +12,11 @@ public interface ApiService {
     @POST("users/register/")
     Call<LoginResponse> register(@Body RegisterRequest request);
 
+    // Rutas exactas encontradas en el Swagger
+    @POST("users/recuperar-contrasena/")
+    Call<Void> requestPasswordReset(@Body EmailRequest request);
+
+    @POST("users/restablecer-contrasena/")
+    Call<Void> confirmPasswordReset(@Body ResetPasswordRequest request);
+
 }

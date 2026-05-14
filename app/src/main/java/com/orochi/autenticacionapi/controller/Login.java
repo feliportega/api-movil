@@ -78,11 +78,17 @@ public class Login extends AppCompatActivity {
                     String access = response.body().getToken();
                     tokenManager.saveToken(access);
 
-                    Toast.makeText(Login.this, "¡Bienvenido!", Toast.LENGTH_SHORT).show();
+                    String nombreUsuario = "Usuario";
+                    if (response.body().getUser() != null) {
+                        nombreUsuario = response.body().getUser().getNombre();
+                    }
 
-                    // Navegamos al Dashboard
+                    Toast.makeText(Login.this, "¡Bienvenido " + nombreUsuario + "!", Toast.LENGTH_SHORT).show();
+
+                    // Navegamos al Dashboard enviando correo y nombre
                     Intent intent = new Intent(Login.this, Dashboard.class);
                     intent.putExtra("USER_EMAIL", email);
+                    intent.putExtra("USER_NAME", nombreUsuario);
                     startActivity(intent);
                     finish(); 
 
@@ -98,41 +104,3 @@ public class Login extends AppCompatActivity {
         });
     }
 }
-
-
-//  btnenrol.setOnClickListener(new View.OnClickListener() {
-//      @Override
-//     public  void onClick(View view) {
-//       if (FaceVault.hasEmbedding(Login.this)) {
-//new androidx.appcompat.app.AlertDialog.Builder(Login.this)
-// .setTitle("Rostro ya registrado")
-//.setMessage("Ya existe un rostro guardado en este dispositivo. ¿Deseas reemplazarlo?")
-//  .setPositiveButton("Sí, reemplazar", (dialog, which) -> {
-//        openEnrollFlow();
-//      })
-//        .setNegativeButton("No", null)
-//          .show();
-//} else {
-//      openEnrollFlow();
-//    }
-
-// }
-// private void openEnrollFlow() {
-//       Intent intent;
-//        if (FaceVault.hasConsent(Login.this)) {
-//              intent = new Intent(Login.this, FaceEnrollActivity.class);
-//    } else {
-//          intent = new Intent(Login.this, FaceConsentActivity.class);
-//       }
-//         startActivity(intent);
-//      }
-//    });
-
-//     btnverify.setOnClickListener(new View.OnClickListener() {
-//           @Override
-//           public  void onClick(View view) {
-//               Intent goVerify = new Intent(Login.this, FaceVerifyActivity.class);
-//               startActivity(goVerify);
-
-//           }
-//     })

@@ -33,9 +33,14 @@ public class Dashboard extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             String email = extras.getString("USER_EMAIL");
+            String nombre = extras.getString("USER_NAME");
+            
             txtemail.setText(email);
-            // Si el nombre no viene en el intent, podrías poner el email o un texto genérico
-            txtnombre.setText("Usuario Activo");
+            if (nombre != null && !nombre.isEmpty()) {
+                txtnombre.setText(nombre);
+            } else {
+                txtnombre.setText("Usuario Activo");
+            }
         }
 
         // Lógica para cerrar sesión

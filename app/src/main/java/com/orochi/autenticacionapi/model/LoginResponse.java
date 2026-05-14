@@ -1,35 +1,26 @@
 package com.orochi.autenticacionapi.model;
 
-import java.util.ArrayList;
+import com.google.gson.annotations.SerializedName;
 
 public class LoginResponse {
-    String access;
+    private String message;
+    private String access;
+    private String refresh;
+    private UserData user;
 
-    public String getToken(){
+    public String getMessage() {
+        return message;
+    }
+
+    public String getToken() {
         return access;
     }
 
-    private ArrayList<LoginRequest>results;
-
-    public LoginResponse(){
+    public String getRefresh() {
+        return refresh;
     }
 
-    public LoginResponse(ArrayList<LoginRequest> results){
-        this.results = results;
-    }
-
-    public ArrayList<LoginRequest>getResults(){
-        return results;
-    }
-
-    @Override
-    public String toString() {
-        return "LoginResponse{" +
-                "token='" + access + '\'' +
-                ", results=" + results +
-                '}';
+    public UserData getUser() {
+        return user;
     }
 }
-
-
-
