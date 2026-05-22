@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AutenticacionApi">
         <activity
+            android:name=".ConceptosBasicos"
+            android:exported="false" />
+        <activity
             android:name=".controller.RestablecerContrasena"
             android:exported="false" />
         <activity
