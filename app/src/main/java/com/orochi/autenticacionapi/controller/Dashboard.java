@@ -2,6 +2,7 @@ package com.orochi.autenticacionapi.controller;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -14,7 +15,7 @@ import com.orochi.autenticacionapi.model.TokenManager;
 public class Dashboard extends AppCompatActivity {
 
     TextView txtnombre, txtemail;
-    Button btnLogout;
+    Button btnLogout, btnirlab;
     TokenManager tokenManager;
 
     @Override
@@ -26,6 +27,15 @@ public class Dashboard extends AppCompatActivity {
         txtnombre = findViewById(R.id.txtNombre);
         txtemail = findViewById(R.id.txtEmail);
         btnLogout = findViewById(R.id.btnLogout);
+
+        btnirlab = findViewById(R.id.btnIrlabo);
+        btnirlab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent irLab = new Intent(Dashboard.this, ViewsLaboratorio.class);
+                startActivity(irLab);
+            }
+        });
         
         tokenManager = new TokenManager(this);
 

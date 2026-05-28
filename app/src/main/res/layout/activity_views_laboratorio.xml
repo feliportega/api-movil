@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.ViewsLaboratorio">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/btnRdash"
+            android:layout_width="46dp"
+            android:layout_height="36dp"
+            android:src="@drawable/iconoretroceder"
+            android:layout_gravity="left"
+            />
+
+
+
+
+        <TextView
+            android:id="@+id/txtTituloLab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tiro parabólico"
+            android:textColor="@android:color/white"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtResumenLab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Laboratorio"
+            android:textColor="#D6D6D6"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+    <!-- CONTENIDO BLANCO -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-20dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- OBJETIVO -->
+            <TextView
+                android:id="@+id/tvobj"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Objetivo"
+                android:textColor="#001B5B"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvObjetivo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:lineSpacingExtra="4dp"
+                android:text="Comprender el comportamiento del tiro parabólico observando la trayectoria de un objeto lanzado con un ángulo inicial determinado."
+                android:textColor="#333333"
+                android:textSize="13sp" />
+
+            <!-- CARD INTERNA -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="¿Qué harás?"
+                        android:textColor="#001B5B"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- ITEM -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="top"
+                            android:layout_marginTop="4dp"
+                         />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="Configurarás los parámetros iniciales."
+                            android:textColor="#333333"
+                            android:textSize="14sp"/>
+                    </LinearLayout>
+
+                    <!-- ITEM -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="top"
+                            android:layout_marginTop="4dp"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="Realizarás la práctica experimental."
+                            android:textColor="#333333"
+                            android:textSize="16sp"/>
+                    </LinearLayout>
+
+                    <!-- ITEM -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="top"
+                            android:layout_marginTop="4dp"
+                           />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="Registrarás y analizarás datos."
+                            android:textColor="#333333"
+                            android:textSize="16sp"/>
+                    </LinearLayout>
+
+                    <!-- ITEM -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="top"
+                            android:layout_marginTop="4dp"
+                           />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="Responderás preguntas de aprendizaje."
+                            android:textColor="#333333"
+                            android:textSize="16sp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- BOTON -->
+            <Button
+                android:id="@+id/btnPractica"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#F4B400"
+                android:text="Comenzar laboratorio"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- NAVBAR - comentario modificado -->
+
+</LinearLayout>

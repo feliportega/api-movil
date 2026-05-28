@@ -1,12 +1,11 @@
-package com.orochi.autenticacionapi;
+package com.orochi.autenticacionapi.controller;
 
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import com.orochi.autenticacionapi.R;
 
 public class ConceptosBasicos extends AppCompatActivity {
 

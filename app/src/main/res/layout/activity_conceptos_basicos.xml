@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ConceptosBasicos">
+    tools:context=".controller.ConceptosBasicos">
 
     <!-- Header -->
     <LinearLayout
@@ -194,7 +194,7 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/physics"
+
                 />
 
             <TextView
@@ -236,7 +236,7 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/signoexclamacion"
+
                 android:tint="@android:color/white"/>
 
             <TextView
@@ -257,7 +257,7 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/iconousuario"
+
                 android:tint="@android:color/white"/>
 
             <TextView
