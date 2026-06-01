@@ -27,4 +27,10 @@ public interface ApiService {
             @Path("id") int id
     );
 
+    @GET("laboratorio-profesor/{id}/")
+    Call<LabResEstudiante> getLaboratorio(
+            @Header("Authorization") String token,
+            @Path("id") int id
+    );
+
 }
